@@ -1,11 +1,19 @@
 package com.businessmodel.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "orderdetails")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class OrderDetail {
 
     @EmbeddedId
@@ -30,63 +38,4 @@ public class OrderDetail {
     @JoinColumn(name = "productCode", referencedColumnName = "productCode")
     private Product product;
 
-    public OrderDetail() {
-    }
-
-    public OrderDetail(OrderDetailId id, Integer quantityOrdered, BigDecimal  priceEach, Short orderLineNumber, Order order, Product product) {
-        this.id = id;
-        this.quantityOrdered = quantityOrdered;
-        this.priceEach = priceEach;
-        this.orderLineNumber = orderLineNumber;
-        this.order = order;
-        this.product = product;
-    }
-
-    public OrderDetailId getId() {
-        return id;
-    }
-
-    public void setId(OrderDetailId id) {
-        this.id = id;
-    }
-
-    public Integer getQuantityOrdered() {
-        return quantityOrdered;
-    }
-
-    public void setQuantityOrdered(Integer quantityOrdered) {
-        this.quantityOrdered = quantityOrdered;
-    }
-
-    public BigDecimal  getPriceEach() {
-        return priceEach;
-    }
-
-    public void setPriceEach(BigDecimal  priceEach) {
-        this.priceEach = priceEach;
-    }
-
-    public Short getOrderLineNumber() {
-        return orderLineNumber;
-    }
-
-    public void setOrderLineNumber(Short orderLineNumber) {
-        this.orderLineNumber = orderLineNumber;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 }
