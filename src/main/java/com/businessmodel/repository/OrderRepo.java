@@ -7,4 +7,6 @@ import com.businessmodel.entity.Order;
 import java.util.List;
 
 public interface OrderRepo extends JpaRepository<Order, Integer> {
+    public List<Order> findByCustomerCustomerNumber(Integer CustomerNumber);
+    public List<Order> findByCustomerCustomerNumberAndStatus(Integer CustomerNumber, String status);
 }
