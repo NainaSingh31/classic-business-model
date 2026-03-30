@@ -8,10 +8,7 @@ import java.util.List;
 public interface OrderService {
 
     List<OrderDto> getOrdersByStatus(String status);
-
-    List<OrderDto> getOrdersByCustomer(int customerId);
-
-    List<OrderDto> getOrdersByCustomerAndStatus(int customerId, String status);
-
-    OrderWithDetailsDto getOrderWithDetails(int orderId);
+    List<OrderDto> getOrdersByCustomerId(Integer customerId);
+    List<OrderDto> getOrdersByCustomerIdAndStatus(Integer customerId, String status);
+    OrderWithDetailsDto getOrderWithDetails(Integer orderId);
 }

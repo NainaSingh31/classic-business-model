@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public SupportDTO getCustomerSupport(Integer customerId) {
+    public SupportDto getCustomerSupport(Integer customerId) {
         return null;
     }
 }
