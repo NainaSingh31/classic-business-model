@@ -23,7 +23,7 @@ public class GlobalExceptionalHandler {
     public ErrorDto handleException(BusinessException e, HttpServletRequest request) {
       return new ErrorDto(e.getMessage(), HttpStatus.BAD_REQUEST.value(),LocalDate.now(),request.getRequestURI());
     }
-    
+
     @ExceptionHandler({BadRequestException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorDto handleException(BadRequestException e, HttpServletRequest request) {
